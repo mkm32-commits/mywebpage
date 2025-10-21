@@ -17,7 +17,7 @@
       padding: 20px;
       display: flex;
       flex-direction: column;
-      align-items: center;
+      align-items: center; /* centers grid on the page */
     }
 
     h1 {
@@ -26,6 +26,7 @@
       color: white;
     }
 
+    /* Grid container */
     .grid-container {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -33,12 +34,13 @@
       padding: var(--gap);
       align-items: stretch;
       grid-auto-rows: 1fr;
-      max-width: 1000px;
+      max-width: 1000px; /* keeps grid compact and centered */
       width: 100%;
       background-color: rgba(255,255,255,0.05);
       border-radius: 10px;
     }
 
+    /* Grid items */
     .grid-container > div {
       background: rgba(255,255,255,0.1);
       padding: 12px;
@@ -50,17 +52,20 @@
       text-align: center;
     }
 
+    /* Optional: make the first item span all columns */
     .item1 {
       grid-column: 1 / -1;
     }
 
+    /* Limit image size */
     img {
-      max-width: 150px;
+      max-width: 150px; /* make image smaller */
       height: auto;
       border-radius: 10px;
       margin: 0 auto;
     }
 
+    /* Keep iframes responsive and smaller */
     iframe {
       width: 100%;
       max-width: 400px;
@@ -129,12 +134,7 @@
 
     <div class="item7">
       <h2>Map</h2>
-      <iframe
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3150.8292239346365!2d-122.11151232392464!3d37.840883671968705!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808f884cd1042763%3A0xf4af4d5ec8f1ac3d!2sSaint%20Mary's%20College%20of%20California!5e0!3m2!1sen!2sus!4v1739877327633!5m2!1sen!2sus"
-        allowfullscreen=""
-        loading="lazy"
-        referrerpolicy="no-referrer-when-downgrade">
-      </iframe>
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!..."></iframe>
     </div>
   </div>
 </body>
