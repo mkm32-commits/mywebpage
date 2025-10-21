@@ -129,7 +129,552 @@
 
     <div class="item6">
       <h2>My Campus</h2>
-      <iframe
+      <iframe src="https://www.youtube.com/embed/Vk8xCKMvZik" title="Campus video" allowfullscreen></iframe>
+    </div>
+
+    <div class="item7">
+      <h2>Map</h2>
+      
+You said:
+I want the grids to be evenly ditributed and they are not hwat is wrong in my code
+ChatGPT said:
+Sure — please paste your code here (HTML, CSS, or whatever part controls the grid layout). Once I can see it, I’ll identify exactly why your grid items aren’t evenly distributed and show you how to fix it.
+It’s often caused by issues like:
+
+Missing or uneven grid-template-columns definitions
+Extra padding/margin on grid items
+Using auto or auto-fit incorrectly
+Fixed widths that don’t divide evenly
+Go ahead and share your code snippet, and I’ll pinpoint the issue.
+You said:
+this is for git hub btw
+ChatGPT said:
+Got it 👍 — are you talking about a GitHub webpage (using GitHub Pages) or how your README.md looks (like a grid of images or text on your profile/project page)?
+GitHub handles layout differently depending on what you’re doing:
+
+If it’s HTML/CSS on a GitHub Pages site, I’ll check your grid CSS.
+If it’s a README.md file, Markdown doesn’t support real CSS grids — you’d need to use HTML tables or inline styles instead.
+Can you paste the part of your code (HTML/CSS or Markdown) that’s supposed to show the grid? Then I’ll tell you exactly why it’s uneven and how to fix it for GitHub.
+You said:
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  gap: 10px;
+  background-color: 
+  padding: 5px;
+}
+
+.grid-container > div {
+  background-color: transparent
+  text-align: center;
+  padding: 5px;
+  font-size: 20px;
+}
+
+.item1 {
+  grid-column-start: 1;
+  grid-column-end: 3;
+}
+</style>
+</head>
+<body>
+
+<h1>My Name is Malia!</h1>
+
+
+
+<div class="grid-container">
+  <div class="item1">    <h2>Hobbies:</h2>
+    Some of my hobbies are:
+    <ul>
+      <li>Playing soccer</li>
+      <li>Hanging out with freinds</li>
+      <li>Trying new foods</li>
+      <li>Being outside</li>
+      <li>Oragami</li>
+      <li>Painting</li>
+    </ul></div>
+  
+  <div class="item2">
+    <h2>Some stuff about me</h2>
+  <p> I am a History Major and digital studies minor at Saint Mary's College in Moraga, CA.</p>
+  <br/>
+  </div>
+  
+  <div class="item3">
+      <img src="E9F0F9CC-FCEF-47D5-8B0F-D7514E315FF1.jpg" width="200">  
+  </div> 
+  
+  <div class="item4">
+        <h2>Classes that I am taking in Fall 2025</h2>
+    <ol>
+      <li> LA Revolutions </li>
+      <li>Digital Literacy</li>
+      <li> Seminar</li>
+    </ol> 
+  </div>
+  
+  <div class="item5">   <a href="Schedule.html">Look at my class schedule here.</a>
+    </div>
+  
+  <div class="item6">
+     <h1> My campus: </h1>
+    <iframe width="727" height="418" src="https://www.youtube.com/embed/Vk8xCKMvZik" title="Inspire. Engage. Transform. We are Gaels." frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+  </div>
+  
+  <div class="item7">
+       <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3150.8292239346365!2d-122.11151232392464!3d37.840883671968705!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808f884cd1042763%3A0xf4af4d5ec8f1ac3d!2sSaint%20Mary&#39;s%20College%20of%20California!5e0!3m2!1sen!2sus!4v1759863767729!5m2!1sen!2sus" width="727" height="418" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></body>
+  </div>
+  
+  <div class="item8">8</div>  
+</div>
+
+</body>
+</html>
+
+<head>
+  <Title>Malia's homepage</Title>
+  
+  <style>
+  table, th, td {
+    border: 1px solid black;
+  }
+  body {
+  /* Ensure the body takes up the full height of the viewport */
+  min-height: 100vh; 
+  /* Define the linear gradient with desired blue shades and direction */
+  background: linear-gradient(to right, #ADD8E6, #4682B4, #191970); 
+  /* Fallback color for browsers that don't support gradients */
+  background-color: #ADD8E6; 
+}
+  </style>
+
+
+   
+ 
+ChatGPT said:
+Thanks for sharing your code! 🎯
+I can see exactly why your grid layout isn’t evenly distributed — there are a few small but important issues. I’ll walk you through the fixes clearly.
+🔍 Main Problems
+Missing semicolons in your CSS (after background-color lines).
+→ Missing semicolons break the CSS rule, so the rest of the properties don’t apply correctly.
+Invalid background-color: line in .grid-container (no color value).
+→ This line stops your CSS from parsing correctly.
+grid-template-columns: auto auto auto; gives columns widths based on content, not equal sizes.
+→ Use 1fr 1fr 1fr to divide space evenly.
+Extra duplicate <head> and misplaced </body> tags.
+→ These confuse browsers and can make your layout inconsistent.
+✅ Cleaned-Up Version (Fixed & Evenly Distributed)
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Malia's Homepage</title>
+  <style>
+    body {
+      min-height: 100vh; 
+      background: linear-gradient(to right, #ADD8E6, #4682B4, #191970); 
+      background-color: #ADD8E6; 
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    .grid-container {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr; /* makes 3 equal columns */
+      gap: 10px;
+      padding: 10px;
+    }
+
+    .grid-container > div {
+      background-color: transparent;
+      text-align: center;
+      padding: 10px;
+      font-size: 18px;
+      border-radius: 10px;
+    }
+
+    .item1 {
+      grid-column: span 2; /* cleaner than start/end */
+    }
+
+    h1, h2 {
+      margin-top: 0;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>My Name is Malia!</h1>
+
+  <div class="grid-container">
+    <div class="item1">
+      <h2>Hobbies:</h2>
+      <ul>
+        <li>Playing soccer</li>
+        <li>Hanging out with friends</li>
+        <li>Trying new foods</li>
+        <li>Being outside</li>
+        <li>Origami</li>
+        <li>Painting</li>
+      </ul>
+    </div>
+  
+    <div class="item2">
+      <h2>Some stuff about me</h2>
+      <p>I am a History Major and Digital Studies minor at Saint Mary's College in Moraga, CA.</p>
+    </div>
+  
+    <div class="item3">
+      <img src="E9F0F9CC-FCEF-47D5-8B0F-D7514E315FF1.jpg" width="200" alt="Malia photo">
+    </div>
+  
+    <div class="item4">
+      <h2>Classes I’m Taking in Fall 2025</h2>
+      <ol>
+        <li>LA Revolutions</li>
+        <li>Digital Literacy</li>
+        <li>Seminar</li>
+      </ol>
+    </div>
+  
+    <div class="item5">
+      <a href="Schedule.html">Look at my class schedule here.</a>
+    </div>
+  
+    <div class="item6">
+      <h2>My Campus:</h2>
+      <iframe width="100%" height="300" src="https://www.youtube.com/embed/Vk8xCKMvZik" frameborder="0" allowfullscreen></iframe>
+    </div>
+  
+    <div class="item7">
+      <iframe width="100%" height="300" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3150.8292239346365!2d-122.11151232392464!3d37.840883671968705!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808f884cd1042763%3A0xf4af4d5ec8f1ac3d!2sSaint%20Mary's%20College%20of%20California!5e0!3m2!1sen!2sus!4v1759863767729!5m2!1sen!2sus" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+    </div>
+  </div>
+</body>
+</html>
+💡 What Changed and Why
+Issue	Fix
+grid-template-columns: auto auto auto;	Changed to 1fr 1fr 1fr for evenly sized columns
+Missing semicolons after CSS lines	Added semicolons
+Extra <head> at bottom	Removed it
+Invalid background-color: line	Removed
+Overlapping or misplaced </body> tag	Fixed structure
+Hard-coded iframe widths (727px)	Changed to width="100%" for responsive layout
+Would you like me to make the grid centered on the page too (so it doesn’t stretch the full width)? I can show you that next if you want a more compact layout.
+You said:
+That didn't work they grids are still looking wierd 
+ChatGPT said:
+
+Thought for 11s
+Thanks — let’s fix this properly. If your grid still looks uneven it’s almost always one (or more) of these things:
+A grid item is spanning columns/rows (like your .item1 { grid-column: span 2; }) which changes the visual rhythm.
+Content inside items (iframes, images, long lists) has different heights and the rows are not forced to match.
+CSS parsing errors or leftover broken markup (duplicate heads / misplaced </body>) still present.
+Items aren’t set to stretch to fill the grid cell.
+Below I give a working, cleaned-up example that addresses all of those issues at once:
+Uses repeat(3, 1fr) for three equal columns.
+Uses grid-auto-rows: 1fr so rows are equal height.
+Makes each grid child a flex column so internal content can lay out and stretch.
+Ensures images/iframes are responsive.
+Makes the top card span the full width (changeable) without breaking the grid balance.
+Copy this full HTML into your GitHub Pages HTML file and replace image/iframe sources if needed:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Malia's Homepage</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <style>
+    /* Page basics */
+    :root { --gap: 12px; }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: system-ui, Arial, sans-serif;
+      min-height: 100vh;
+      background: linear-gradient(to right, #ADD8E6, #4682B4, #191970);
+      color: #111;
+      padding: 20px;
+    }
+
+    h1 { margin: 0 0 16px 0; }
+
+    /* Grid: 3 equal columns, equal-height rows */
+    .grid-container {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr); /* three equal columns */
+      gap: var(--gap);
+      padding: var(--gap);
+      align-items: stretch; /* make children stretch vertically */
+      grid-auto-rows: 1fr; /* each row will try to be equal height */
+    }
+
+    /* Make each grid item a flex column so content can space properly */
+    .grid-container > div {
+      background: rgba(255,255,255,0.06); /* subtle card bg */
+      padding: 12px;
+      border-radius: 8px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: stretch;
+      min-height: 0; /* important for allowing flex children to shrink inside grid */
+      overflow: hidden;
+    }
+
+    /* If you want the first card to be a full-width hero, use this.
+       Change to `grid-column: 1 / span 2;` or remove entirely if you want three equal cards. */
+    .item1 {
+      grid-column: 1 / -1; /* span all columns (full width) */
+    }
+
+    /* Text formatting */
+    h2 { margin: 0 0 8px 0; }
+    p, ul, ol { margin: 0 0 12px 0; padding-left: 1.1em; }
+
+    /* Responsive images and iframes */
+    img { max-width: 100%; height: auto; display: block; margin: 0 auto; }
+    /* Use aspect-ratio to keep iframes tidy and responsive */
+    iframe {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      border: 0;
+      display: block;
+    }
+
+    /* Make layout wrap on small screens */
+    @media (max-width: 900px) {
+      .grid-container { grid-template-columns: repeat(2, 1fr); }
+      .item1 { grid-column: 1 / -1; }
+    }
+    @media (max-width: 520px) {
+      .grid-container { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <h1>My Name is Malia!</h1>
+
+  <div class="grid-container">
+    <div class="item1">
+      <h2>Hobbies</h2>
+      <ul>
+        <li>Playing soccer</li>
+        <li>Hanging out with friends</li>
+        <li>Trying new foods</li>
+        <li>Being outside</li>
+        <li>Origami</li>
+        <li>Painting</li>
+      </ul>
+    </div>
+
+    <div class="item2">
+      <h2>Some stuff about me</h2>
+      <p>I am a History Major and Digital Studies minor at Saint Mary's College in Moraga, CA.</p>
+    </div>
+
+    <div class="item3">
+      <img src="E9F0F9CC-FCEF-47D5-8B0F-D7514E315FF1.jpg" alt="photo">
+    </div>
+
+    <div class="item4">
+      <h2>Classes (Fall 2025)</h2>
+      <ol>
+        <li>LA Revolutions</li>
+        <li>Digital Literacy</li>
+        <li>Seminar</li>
+      </ol>
+    </div>
+
+    <div class="item5">
+      <a href="Schedule.html">Look at my class schedule here.</a>
+    </div>
+
+    <div class="item6">
+      <h2>My campus</h2>
+      <iframe src="https://www.youtube.com/embed/Vk8xCKMvZik" title="Campus video" allowfullscreen></iframe>
+    </div>
+
+    <div class="item7">
+      <h2>Map</h2>
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!..."></iframe>
+    </div>
+
+    <div class="item8">
+      <h2>Extra</h2>
+      <p>Some extra content here.</p>
+    </div>
+  </div>
+
+</body>
+</html>
+If you still see an uneven look:
+Check .item1 span: If you want all tiles equal, remove .item1 { grid-column: 1 / -1; } so it stops spanning. Spanning is the usual culprit for “uneven” grids.
+Open DevTools → Elements and inspect each grid cell: look for unexpected margins/padding or very tall elements.
+Make sure there are no stray CSS parse errors (look in DevTools Console for CSS warnings). Missing semicolons will stop rules from applying.
+Replace big fixed pixel heights (e.g., height="418") with responsive rules — fixed heights create mismatched cells.
+Tell me which of these matches what you want:
+Option A — All cards equal (no spanning).
+Option B — Hero card at top spanning full width, rest equal (current code uses this).
+I already put the “hero spanning full width” in the sample. If you want every cell to be the exact same visual size (no spanning), I’ll give you that small edit. Which do you want?
+You said:
+I also noticed that my grids are really oversized and I would like the image I used to be a bit smaller so It is not overpowering the whole screen
+ChatGPT said:
+Perfect — that’s a great observation, and it’s easy to fix.
+Here’s how we’ll handle it cleanly:
+Limit the overall grid width so it doesn’t stretch across your entire screen.
+Center the grid on the page.
+Set a max size for images and iframes so they stay balanced with the text.
+Below is a clean, corrected version of your page that keeps everything evenly spaced, visually balanced, and easy to read on GitHub Pages.
+✨ Polished Version — Compact Grid + Balanced Image
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Malia's Homepage</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    :root { --gap: 12px; }
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: system-ui, Arial, sans-serif;
+      min-height: 100vh;
+      background: linear-gradient(to right, #ADD8E6, #4682B4, #191970);
+      color: #111;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center; /* centers grid on the page */
+    }
+
+    h1 {
+      margin: 0 0 16px 0;
+      text-align: center;
+      color: white;
+    }
+
+    /* Grid container */
+    .grid-container {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--gap);
+      padding: var(--gap);
+      align-items: stretch;
+      grid-auto-rows: 1fr;
+      max-width: 1000px; /* keeps grid compact and centered */
+      width: 100%;
+      background-color: rgba(255,255,255,0.05);
+      border-radius: 10px;
+    }
+
+    /* Grid items */
+    .grid-container > div {
+      background: rgba(255,255,255,0.1);
+      padding: 12px;
+      border-radius: 8px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+      text-align: center;
+    }
+
+    /* Optional: make the first item span all columns */
+    .item1 {
+      grid-column: 1 / -1;
+    }
+
+    /* Limit image size */
+    img {
+      max-width: 150px; /* make image smaller */
+      height: auto;
+      border-radius: 10px;
+      margin: 0 auto;
+    }
+
+    /* Keep iframes responsive and smaller */
+    iframe {
+      width: 100%;
+      max-width: 400px;
+      aspect-ratio: 16 / 9;
+      border: 0;
+      border-radius: 8px;
+    }
+
+    h2 { margin: 0 0 8px 0; color: white; }
+    p, ul, ol { margin: 0 0 12px 0; padding-left: 1em; color: white; }
+    a { color: #fffa; text-decoration: underline; }
+
+    @media (max-width: 900px) {
+      .grid-container { grid-template-columns: repeat(2, 1fr); }
+      .item1 { grid-column: 1 / -1; }
+    }
+
+    @media (max-width: 600px) {
+      .grid-container { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+
+<body>
+  <h1>My Name is Malia!</h1>
+
+  <div class="grid-container">
+    <div class="item1">
+      <h2>Hobbies</h2>
+      <ul>
+        <li>Playing soccer</li>
+        <li>Hanging out with friends</li>
+        <li>Trying new foods</li>
+        <li>Being outside</li>
+        <li>Origami</li>
+        <li>Painting</li>
+      </ul>
+    </div>
+
+    <div class="item2">
+      <h2>Some Stuff About Me</h2>
+      <p>I’m a History Major and Digital Studies Minor at Saint Mary's College in Moraga, CA.</p>
+    </div>
+
+    <div class="item3">
+      <img src="E9F0F9CC-FCEF-47D5-8B0F-D7514E315FF1.jpg" alt="Malia photo">
+    </div>
+
+    <div class="item4">
+      <h2>Classes (Fall 2025)</h2>
+      <ol>
+        <li>LA Revolutions</li>
+        <li>Digital Literacy</li>
+        <li>Seminar</li>
+      </ol>
+    </div>
+
+    <div class="item5">
+      <a href="Schedule.html">Look at my class schedule here.</a>
+    </div>
+
+    <div class="item6">
+      <h2>My Campus</h2>
+      <iframe src="https://www.youtube.com/embed/Vk8xCKMvZik" title="Campus video" allowfullscreen></iframe>
+    </div>
+
+    <div class="item7">
+      <h2>Map</h2>
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!..."></iframe>
+    </div>
+  </div>
+</body>
+</html>
+<iframe
   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3150.8292239346365!2d-122.11151232392464!3d37.840883671968705!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808f884cd1042763%3A0xf4af4d5ec8f1ac3d!2sSaint%20Mary's%20College%20of%20California!5e0!3m2!1sen!2sus!4v1739877327633!5m2!1sen!2sus"
   width="400"
   height="300"
@@ -137,13 +682,7 @@
   allowfullscreen=""
   loading="lazy"
   referrerpolicy="no-referrer-when-downgrade">
-</iframe>
-    </div>
-
-    <div class="item7">
-      <h2>Map</h2>
-    <iframe src="https://www.google.com/maps/embed?pb=!1m18!..."></iframe>
-    </div>
+</iframe>    </div>
   </div>
 </body>
 </html>
