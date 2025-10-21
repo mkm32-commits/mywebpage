@@ -69,5 +69,73 @@
     iframe {
       width: 100%;
       max-width: 400px;
-      aspect-ratio:
+      aspect-ratio: 16 / 9;
+      border: 0;
+      border-radius: 8px;
+    }
 
+    h2 { margin: 0 0 8px 0; color: white; }
+    p, ul, ol { margin: 0 0 12px 0; padding-left: 1em; color: white; }
+    a { color: #fffa; text-decoration: underline; }
+
+    @media (max-width: 900px) {
+      .grid-container { grid-template-columns: repeat(2, 1fr); }
+      .item1 { grid-column: 1 / -1; }
+    }
+
+    @media (max-width: 600px) {
+      .grid-container { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+
+<body>
+  <h1>My Name is Malia!</h1>
+
+  <div class="grid-container">
+    <div class="item1">
+      <h2>Hobbies</h2>
+      <ul>
+        <li>Playing soccer</li>
+        <li>Hanging out with friends</li>
+        <li>Trying new foods</li>
+        <li>Being outside</li>
+        <li>Origami</li>
+        <li>Painting</li>
+      </ul>
+    </div>
+
+    <div class="item2">
+      <h2>Some Stuff About Me</h2>
+      <p>I’m a History Major and Digital Studies Minor at Saint Mary's College in Moraga, CA.</p>
+    </div>
+
+    <div class="item3">
+      <img src="E9F0F9CC-FCEF-47D5-8B0F-D7514E315FF1.jpg" alt="Malia photo">
+    </div>
+
+    <div class="item4">
+      <h2>Classes (Fall 2025)</h2>
+      <ol>
+        <li>LA Revolutions</li>
+        <li>Digital Literacy</li>
+        <li>Seminar</li>
+      </ol>
+    </div>
+
+    <div class="item5">
+      <a href="Schedule.html">Look at my class schedule here.</a>
+    </div>
+
+    <div class="item6">
+      <h2>My Campus</h2>
+      <iframe src="https://www.youtube.com/embed/Vk8xCKMvZik" title="Campus video" allowfullscreen></iframe>
+    </div>
+
+    <div class="item7">
+      <h2>Map</h2>
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!..."></iframe>
+    </div>
+  </div>
+</body>
+</html>
